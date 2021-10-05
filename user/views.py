@@ -28,3 +28,9 @@ class UsersView(GenericAPIView):
         except Exception as e:
             data = {'error': str(e)}
         return JsonResponse(data)
+
+
+
+def index(request):
+
+    return render(request,"index.html",locals())

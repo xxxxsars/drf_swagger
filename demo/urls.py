@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 from user import views as user_view
+from user import views
 
 urlpatterns = [
+   path('',views.index),
     path('admin/', admin.site.urls),
     path("users/",user_view.UsersView.as_view())
 ]
